@@ -12,7 +12,7 @@ For instance, you might have a "Product A" product which has various price optio
 
 | Field Name                | Type    | Required | Description                |
 |---------------------------|---------|----------|----------------------------|
-| product| String | Yes | ID of [Product](product.md). |
+| product| String | Yes | ID of [Product](products.md). |
 | currency| String | Yes | Currency code (usdt). |
 | unit_amount| String | Yes | Unit price of the product. |
 
