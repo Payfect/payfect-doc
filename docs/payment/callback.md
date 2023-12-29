@@ -29,9 +29,13 @@ def decrypt_signature(signature, secret_key):
     return json.loads(fernet.decrypt(signature.encode('utf-8')).decode('utf-8'))
 ```
 
+## Validating the Decrypted Data
+
+After decrypting the signature, it is crucial to validate that the decrypted data matches the data in the original POST body. If there are discrepancies, it could indicate that the API data has been tampered with. In such cases, appropriate measures should be taken to handle the potential security breach.
+
 ## Callback Payload
 
-After decrypting the signature, the callback payload will be in the following format:
+The callback payload will be in the following format:
 
 ```json
 {
@@ -52,3 +56,5 @@ After decrypting the signature, the callback payload will be in the following fo
   "client_reference_id": "5ae50223-e455-4a72-a48d-fe7d85800e64"
 }
 ```
+
+This payload contains detailed information about the completed transaction. If the decrypted data does not match the original POST request data, it indicates a potential data integrity issue and should be addressed immediately.
