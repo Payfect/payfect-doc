@@ -59,8 +59,8 @@ To create a checkout with the Payfect API, you will need to make a `POST` reques
 
 The response for the `Create a Checkout` API call returns a JSON object containing several fields. Below is a detailed description of each field:
 
-| Field Name                   | Type    | Description |
-|------------------------------|---------|-------------|
+| Field Name                 | Type    | Description |
+|----------------------------|---------|-------------|
 | id                         | String  | Unique identifier for the checkout session. |
 | merchant                   | Object  | Contains merchant's `id` and `name`. |
 | nameCollection             | Boolean | Indicates if the customer name is collected. |
