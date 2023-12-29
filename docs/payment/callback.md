@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Callback for Checkout Success
 
 After a successful checkout session, Payfect API will trigger a callback to the specified URL. This callback will use a POST request with JSON data.
