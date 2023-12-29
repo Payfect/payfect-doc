@@ -10,7 +10,7 @@ After a successful checkout session, Payfect API will trigger a callback to the 
 
 The callback URL is determined as follows:
 - If a `callback_url` is provided during the `Create a Checkout` request, that URL will be used.
-- If no `callback_url` is provided at checkout creation, the default callback URL set in the backend website will be used.
+- If no `callback_url` is provided at checkout creation, the default callback URL set in the [dashboard website webhook page](https://dashboard.payfect.finance/test/developer/webhooks) will be used.
 
 ## Request Header
 
