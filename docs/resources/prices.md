@@ -15,36 +15,3 @@ For instance, you might have a "Product A" product which has various price optio
 | product| String | Yes | ID of [Product](products.md). |
 | currency| String | Yes | Currency code (usdt). |
 | unit_amount| String | Yes | Unit price of the product. |
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="python" label="Python" default>
-
-```python
-import payfect
-payfect.api_key = 'Tan2glfr.YFigW4Xx37Lbj6d4x6iXtw7pzUaNTHKk'
-
-# Create price with product id
-price_item = payfect.Price.create(
-    product='33b71460-2d24-11ee-be56-0242ac120002',
-    currency='usdt',
-    unit_amount='100.5',
-)
-
-# Create price with product data
-price_item = payfect.Price.create(
-    product_data={
-        'name': 'Product A',
-        'description': 'A very nice product.',
-    }
-    currency='usdt',
-    unit_amount='100.5',
-)
-
-print(price_item['id'])
-```
-
-  </TabItem>
-</Tabs>
