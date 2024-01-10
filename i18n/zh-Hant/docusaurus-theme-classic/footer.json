@@ -1,0 +1,30 @@
+{
+  "link.title.Docs": {
+    "message": "文件",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "社群",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "其他",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Payment Integration": {
+    "message": "支付整合（Payment）",
+    "description": "The label of footer link with label=Payment Integration linking to docs/category/payment-integration"
+  },
+  "link.item.label.Facebook": {
+    "message": "Facebook",
+    "description": "The label of footer link with label=Facebook linking to https://www.facebook.com/payfect"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/payfect"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 Designed and built by Payfect",
+    "description": "The footer copyright"
+  }
+}
