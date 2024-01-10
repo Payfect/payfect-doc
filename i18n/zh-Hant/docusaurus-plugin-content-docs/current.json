@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Payment Integration": {
+    "message": "支付整合（Payment）",
+    "description": "The label for category Payment Integration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Payment Integration.link.generated-index.description": {
+    "message": "快速瞭解如何整合加密貨幣支付至你的系統",
+    "description": "The generated-index page description for category Payment Integration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "資源（Resources）",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources.link.generated-index.description": {
+    "message": "快速瞭解 Payfect 所提供的資源",
+    "description": "The generated-index page description for category Resources in sidebar tutorialSidebar"
+  }
+}

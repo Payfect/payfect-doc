@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Products
+# 产品（Products）
 
-Products refer to the unique items or services you provide to your customers. For instance, if you offer Standard and Premium versions of your service, each would be an individual Product. These Products, paired with Prices, help define cost in Payment Links, Checkout.
+产品指的是您提供给客户的独特商品或服务。例如，如果您提供标准版和高级版的服务，每一种都会是一个单独的产品。这些产品，与价格相结合，有助于在支付链接、结账中定义成本。
 
 ## Fields
 
