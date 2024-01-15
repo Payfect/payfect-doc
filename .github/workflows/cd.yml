@@ -1,0 +1,58 @@
+name: Deploy to S3 and Invalidate CloudFront
+
+on:
+  push:
+    branches: [main, develop]
+
+  pull_request:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Set bucket name and CloudFront distribution ID
+        run: |
+          if [[ $GITHUB_REF_NAME == 'main' ]]; then
+            echo "BUCKET_NAME=${{ vars.PROD_BUCKET_NAME }}" >> $GITHUB_ENV
+            echo "CLOUDFRONT_DISTRIBUTION_ID=${{ vars.PROD_CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_ENV
+          else
+            echo "BUCKET_NAME=${{ vars.DEV_BUCKET_NAME }}" >> $GITHUB_ENV
+            echo "CLOUDFRONT_DISTRIBUTION_ID=${{ vars.DEV_CLOUDFRONT_DISTRIBUTION_ID }}" >> $GITHUB_ENV
+          fi
+
+      - name: Empty S3 bucket
+        run: aws s3 rm s3://${{ env.BUCKET_NAME }} --recursive
+
+      - name: Sync files to S3
+        run: aws s3 sync ./build s3://${{ env.BUCKET_NAME }} --delete
+
+      - name: Invalidate CloudFront distribution
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
